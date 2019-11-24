@@ -2,16 +2,15 @@ name: CI
 
 on:
   pull_request:
-    branches: 
+    branches:
       - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - run: python3.7 -m pip install pipenv
-    - run: python3.7 -m pipenv install --dev
-    - run: python3.7 -m pipenv run test
+      - uses: actions/checkout@v1
+      - run: python3 -m pip install pipenv
+      - run: python3 -m pipenv install --dev
+      - run: python3 -m pipenv run test
